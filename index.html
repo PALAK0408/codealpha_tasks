@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECIEPE APP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Recipe Book App</h1>
+    </header>
+    <div class="container">
+        <ul id="recipe-list" class ="recipe-list">
+           <li class = "recipe-item">
+                <img src="https://th.bing.com/th/id/OIP.fRZW1j0fLNdRzYyxRcu8wgHaFj?rs=1&pid=ImgDetMain" alt="pav bhaji">
+                <h2>Recipe 1  </h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                
+                </p>
+                <a href="" onclick="viewrecipe()">View Reciepe</a>
+            </li>
+            <li class = "recipe-item">
+                <img src="https://foodiewish.com/wp-content/uploads/2020/05/Masala-Dosa-Recipe.jpg" alt="Dosa">
+                <h2>Recipe 2</h2>
+                <p>
+                    <Strong>INGREDIENTS</Strong>
+                </p>
+                <a href="">View Recipe</a>
+            </li>
+            <li class = "recipe-item">
+                <img src = "https://th.bing.com/th/id/OIP.nopVXj-iqHK5s5KbBwZ62AHaJ3?rs=1&pid=ImgDetMain"  alt ="Bada Pav">
+                <h2>Recipe 3</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            <li class = "recipe-item">
+                <img src = "https://recipes.timesofindia.com/photo/61048461.cms?imgsize=506987" alt ="pani puri">
+                <h2>Recipe 4</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            <li class = "recipe-item">
+                <img src = "https://myincrediblerecipes.com/wp-content/uploads/2021/02/mac-and-cheese-1-of-1-75.jpg"  alt ="mac and cheese">
+                <h2>Recipe 5</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            <li class = "recipe-item">
+                <img src = "https://d36v5spmfzyapc.cloudfront.net/wp-content/uploads/2021/02/Veg-Upma-2.jpg"  alt ="upma">
+                <h2>Recipe 6</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            <li class = "recipe-item">
+                <img src = "https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-2.jpg" alt ="tandoori paneer">
+                <h2>Recipe 7</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            <li class = "recipe-item">
+                <img src = "https://th.bing.com/th/id/R.19f205e58670c4bc052b05b74499dd22?rik=Kkm6BsKd37EQmA&riu=http%3a%2f%2f1.bp.blogspot.com%2f-S_5Fez8QnwM%2fVmRfnAE6UTI%2fAAAAAAAAADQ%2fG_Uh0ZF34_A%2fs1600%2fff.jpg&ehk=MxxF28LciBOzY4Yk82lzqfYmbXLKo3NIVtd6XAqPVO8%3d&risl=&pid=ImgRaw&r=0" alt ="chhole bhature">
+                <h2>Recipe 8</h2>
+                <p>
+                    <strong>INGREDIENTS</strong>
+                </p>
+                <a href="">View Recipe</a>
+
+            </li>    
+            
+        </ul>
+        <form id="recipe-form">
+            <label for="recipe-name">Recipe Name:</label>
+            <input type="text" id="recipe-name" required>
+    
+            <label for="recipe-image">Recipe Image URL:</label>
+            <input type="text" id="recipe-image" required>
+    
+            <label for="recipe-description">Recipe Description:</label>
+            <textarea id="recipe-description" required></textarea>
+    
+            <button type="button" onclick="addRecipe()">Add Recipe</button>
+        </form>
+    </div>
+    <script>
+        function addRecipe() {
+            const name = document.getElementById('recipe-name').value;
+            const image = document.getElementById('recipe-image').value;
+            const description = document.getElementById('recipe-description').value;
+
+            const recipeList = document.getElementById('recipe-item');
+            const listItem = document.createElement('li');
+            listItem.className = 'recipe';
+
+            const imageElement = document.createElement('img');
+            imageElement.src = image;
+            imageElement.alt = name;
+            imageElement.style.width = '100px'; // Adjust as needed
+
+            const nameElement = document.createElement('h2');
+            nameElement.textContent = name;
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = description;
+
+            listItem.appendChild(imageElement);
+            listItem.appendChild(nameElement);
+            listItem.appendChild(descriptionElement);
+
+            recipeList.appendChild(listItem);
+
+            // Clear form fields
+            document.getElementById('recipe-form').reset();
+        }
+    </script>
+</body>
+</html>
